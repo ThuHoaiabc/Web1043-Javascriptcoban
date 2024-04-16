@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab2</title>
+</head>
+<body>
+    
+    <script>
+        const theList = ['Lauren', 'Kevin', true, 35, null, undefined, ['one', 'two']];
+
+        // Xóa phan tu dau tien cua mang
+        theList.shift();
+
+        // Xóa phan tu cuoi cung cua mang
+        theList.pop();
+
+        // Thêm first vào đầu mảng
+        theList.unshift('FIRST');
+        
+        // Thêm "Hello World" vao vi tri thu 4 cua mang
+        theList.splice(3, 0, 'Hello World');
+
+        // Thêm 'middle' vào vị trí thứ 3 của mảng
+        theList.splice(2, 0, 'middle');
+
+        // Thêm 'LAST' vào cuối mảng
+        theList.push('LAST');
+
+        // Xuất kết quả:
+        console.log(theList);
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+<body>
+    <button onclick="hienThi()">Hiển thị</button>
+    <script>
+        // Tạo đối tượng sinh viên
+        var sv = new Object();
+        // Nhập họ tên và điểm
+        sv.hoTen = prompt("Họ và tên: ");
+        sv.diem = prompt("Diem: ");
+        // Khai báo phương thức
+        sv.hienThi = function (){
+            if (this.diem >= 5) {
+                this.hocLuc = "Đậu";
+            }else {
+                this.hocLuc = "Rớt";
+            }
+            document.write("<h3>Họ và tên: " + sv.hoTen + "</h3>");
+            document.write("<h3>Điểm: " + sv.diem + "</h3>");
+            document.write("<h3>Học lực: " + sv.hocLuc + "</h3>");
+        };
+        
+        function hienThi() {
+            sv.hienThi();
+        };
+
+
+    </script>
+</body>
+</html>

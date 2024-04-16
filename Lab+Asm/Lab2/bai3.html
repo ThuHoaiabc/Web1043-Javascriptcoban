@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab2</title>
+</head>
+<body>
+    
+    
+    <script>
+        var weight = prompt("Nhap trong luong co the cua ban(kg): ");
+        var height = prompt("Nhap chieu cao cua ban(m): ");
+        var BMI = weight / (height * height);
+        if(BMI < 18.5){
+            alert("Thieu can");
+        }else if(BMI >= 18.5 && BMI<25){
+            alert("Binh thuong");
+        }else if(BMI >= 25 && bmi < 30){
+            alert("Thua can");
+        }else{
+            alert("Beo phi");
+        }
+    </script>
+</body>
+</html>

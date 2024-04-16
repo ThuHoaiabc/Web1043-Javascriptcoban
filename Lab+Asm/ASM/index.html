@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Coffee</title>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 1200px;
+                tr {
+                    text-align: center;
+                    padding: 30px;
+                }
+                margin-bottom: 20px;
+            }
+
+        </style>
+   
+</head>
+
+<body onload="auto()">
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="/Lab(LMS)/ASM/img/logo.png" alt="">
+            </div>
+            <div class="dangnhap">
+                <h1>Đăng nhập</h1>
+                <div class="ngonngu">
+                    <span class="vn">VN</span>
+                    <span class="en">EN</span>
+                </div>
+                <button class="giohang">
+                    <h2>Giỏ hàng</h2>
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2">
+                                <circle cx="9" cy="21" r="1" />
+                                <circle cx="20" cy="21" r="1" />
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                            </g>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">TRANG CHỦ</a></li>
+                <li><a href="#">CÀ PHÊ</a></li>
+                <li><a href="#">TRÀ</a></li>
+                <li><a href="#">THỨC UỐNG</a></li>
+                <li><a href="#">SẢN PHẨM</a></li>
+                <li><a href="#">KHUYẾN MÃI</a></li>
+                <li><a href="#">VỀ CHÚNG TÔI</a></li>
+                <li><a href="#">THẺ</a></li>
+                <li><a href="#">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 50 50">
+                                <path fill="currentColor"
+                                    d="M23 36c-7.2 0-13-5.8-13-13s5.8-13 13-13s13 5.8 13 13s-5.8 13-13 13zm0-24c-6.1 0-11 4.9-11 11s4.9 11 11 11s11-4.9 11-11s-4.9-11-11-11z" />
+                                <path fill="currentColor" d="m32.682 31.267l8.98 8.98l-1.414 1.414l-8.98-8.98z" />
+                            </svg>
+                        </div>
+                    </a></li>
+            </ul>
+        </nav>
+        <div class="banner">
+            <div onclick="prev()" class="icon1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 6l-6 6l6 6"/>
+                </svg>
+            </div>
+            <div onclick="next()" class="icon2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 6l6 6l-6 6"/>
+                </svg>
+            </div>
+            <img id="anh" src="/Lab(LMS)/ASM/img/0.jpg" alt="">
+            
+        </div>
+        
+        <script>
+            var images = [];
+            var index = 0; // Biến lưu vị trí hiện tại của hình ảnh
+            for (let i = 0; i < 3; i++){
+                images[i] = new Image();
+                images[i].src = "/Lab(LMS)/ASM/img/" + i + ".jpg";
+            }
+        
+            function next(){
+                index++;
+                if (index >= images.length) {
+                    index = 0; // Quay lại hình ảnh đầu tiên nếu đã đến hình ảnh cuối cùng
+                }
+                var anh = document.getElementById("anh");
+                anh.src = images[index].src;
+            }
+
+            function auto(){
+            interval = setInterval(next, 2500);
+        }
+        
+            function prev(){
+                index--;
+                if (index < 0) {
+                    index = images.length - 1; // Quay lại hình ảnh cuối cùng nếu đã ở hình ảnh đầu tiên
+                }
+                var anh = document.getElementById("anh");
+                anh.src = images[index].src;
+            }
+        </script>
+
+        <div class="tieude">
+            <h1>THỨC UỐNG</h1>
+            <hr>
+            <div class="luachon">
+                <span>THỨC UỐNG</span>
+                <span>SNACKS</span>
+                <span>BAKERY</span>
+            </div>
+        </div>
+        <div class="congcu">
+            <form action="" class="theloai">
+                <label for="">Thể loại</label>
+                <select name="" id="">
+                    <option value="">Chọn thể loại</option>
+                    <option value="">Sữa chua</option>
+                    <option value="">Cà phê</option>
+                    <option value="">Đá xay</option>
+                    <option value="">Trà sữa</option>
+                </select>
+                <button>Lọc</button>
+            </form>
+            <form action="" class="sapxep">
+                <button>Sắp xếp</button>
+                <select name="" id="">
+                    <option value="">Giảm dần</option>
+                    <option value="">Tăng dần</option>
+                </select>
+            </form>
+            <form action="" class="timkiem">
+                <button>Tìm kiếm</button>
+                <input type="text">
+            </form>
+        </div>
+        <div class="ds_sanpham">
+            <div id="product-list" class="danhsach">
+                <div id="product" class="sanpham">
+                    <img src="/Lab(LMS)/ASM/img/capuchinodaxay.png" alt="">
+                    <h1>Capuchino Đá Xay</h1>
+                    <p>Espresso Ice Blended</p>
+                    <p class="gia">60000 đ</p>
+                    <button onclick="them('Capuchino Đá Xay', '60000')">ĐẶT HÀNG</button>
+                </div>
+                <div id="product" class="sanpham">
+                    <img src="/Lab(LMS)/ASM/img/hongtrachanh.png" alt="">
+                    <h1>Hồng Trà Chanh</h1>
+                    <p>Lime Black Tea </p>
+                    <p class="gia">40000 đ</p>
+                    <button onclick="them('Hồng Trà Chanh', '40000')">ĐẶT HÀNG</button>
+                </div>
+                <div id="product" class="sanpham">
+                    <img src="/Lab(LMS)/ASM/img/trasuamatch.png" alt="">
+                    <h1>Trà Sữa Matcha</h1>
+                    <p>Matcha Milk Tea </p>
+                    <p class="gia">45000 đ</p>
+                    <button onclick="them('Trà Sữa Matcha', '45000')">ĐẶT HÀNG</button>
+                </div>
+                <div id="product" class="sanpham">
+                    <img src="https://phuclong.com.vn/uploads/dish/4136b3715bff3e-sachuaphcbntccamphclong.png" alt="">
+                    <h1>Sữa Chua Phúc Bồn Tử Đác Cam</h1>
+                    <p>Raspberry Yogurt with Orange Dac Seed</p>
+                    <p class="gia">70000 đ</p>
+                    <button onclick="them('Sữa Chua Phúc Bồn Tử Đác Cam', '70000')">ĐẶT HÀNG</button>
+                </div>
+            </div>
+            <div id="product-list" class="danhsach">
+                <div id="product" class="sanpham">
+                    <img src="https://phuclong.com.vn/uploads/dish/65a7d028c2229d-sachuaxoicthmphclong.png" alt="">
+                    <h1>Sữa Chua Xoài Đác Thơm</h1>
+                    <p>Mango Yogurt with Pineapple Dac Seed</p>
+                    <p class="gia">70000 đ</p>
+                    <button onclick="them('Sữa Chua Xoài Đác Thơm', '70000')">ĐẶT HÀNG</button>
+                </div>
+                <div id="product" class="sanpham">
+                    <img src="https://phuclong.com.vn/uploads/dish/37702760a2b2e3-65000309nhnxay.png" alt="">
+                    <h1>Nhãn Đá Xay</h1>
+                    <p>&nbsp;</p>
+                    <p class="gia">60000 đ</p>
+                    <button onclick="them('Nhãn Đá Xay', '60000')">ĐẶT HÀNG</button>
+                </div>
+                <div id="product" class="sanpham">
+                    <img src="https://phuclong.com.vn/uploads/dish/5318362664d05b-trlongdu.png" alt="">
+                    <h1>Trà Ô Long Dâu</h1>
+                    <p>Strawberry Oolong Tea </p>
+                    <p class="gia">50000 đ</p>
+                    <button onclick="them('Trà Ô Long Dâu', '50000')">ĐẶT HÀNG</button>
+                </div>
+                <div id="product" class="sanpham">
+                    <img src="https://phuclong.com.vn/uploads/dish/e3a453a57402ee-65000307trsanhnsen.png" alt="">
+                    <h1>Trà Sữa Nhãn Sen</h1>
+                    <p>&nbsp;</p>
+                    <p class="gia">55000 đ</p>
+                    <button onclick="them('Trà Sữa Nhãn Sen', '55000')">ĐẶT HÀNG</button>
+                </div>
+            </div>
+            <div id="product-list" class="danhsach">
+                <div id="product" class="sanpham">
+                    <img src="https://phuclong.com.vn/uploads/dish/8ebb07f0eeccc1-resize_damdadunggu07.png" alt="">
+                    <h1>Cà Phê Sữa</h1>
+                    <p>&nbsp;</p>
+                    <p class="gia">35000 đ</p>
+                    <button onclick="them('Cà Phê Sữa', '35000')">ĐẶT HÀNG</button>
+                </div>
+                <div id="product" class="sanpham">
+                    <img src="https://phuclong.com.vn/uploads/dish/dae727e03e8092-daccam.png" alt="">
+                    <h1>Hồng Trà Đác Cam Đá Xay</h1>
+                    <p>Orange Dac Seed Black Tea Ice Blended</p>
+                    <p class="gia">70000 đ</p>
+                    <button onclick="them('Hồng Trà Đác Cam Đá Xay', '70000')">ĐẶT HÀNG</button>
+                </div>
+                <div id="product" class="sanpham">
+                    <img src="https://phuclong.com.vn/uploads/dish/24d0961b7dba35-chocolatephclong.png" alt="">
+                    <h1>Bạc Xỉu</h1>
+                    <p>Bạc Xỉu </p>
+                    <p class="gia">40000 đ</p>
+                    <button onclick="them('Bạc Xỉu', '40000')">ĐẶT HÀNG</button>
+                </div>
+                <div id="product" class="sanpham">
+                    <img src="https://phuclong.com.vn/uploads/dish/3c2d50a2c26783-hngtrsaphclongtrosaphclong.png"
+                        alt="">
+                    <h1>Hồng Trà Sữa</h1>
+                    <p>Black Milk Tea</p>
+                    <p class="gia">45000 đ</p>
+                    <button onclick="them('Hồng Trà Sữa', '45000')">ĐẶT HÀNG</button>
+                </div>
+            </div>
+            <div id="product-list" class="danhsach">
+                <div id="product" class="sanpham">
+                    <img src="https://phuclong.com.vn/uploads/dish/64bd44180be24c-sinhtchanh.png" alt="">
+                    <h1>Chanh Đá Xay</h1>
+                    <p>Lime Ice Blended</p>
+                    <p class="gia">50000 đ</p>
+                    <button onclick="them('Chanh Đá Xay', '50000')">ĐẶT HÀNG</button>
+                </div>
+                <div id="product" class="sanpham">
+                    <img src="https://phuclong.com.vn/uploads/dish/72781119ecd681-sclaxaycnghnhnhnvespresso.png" alt="">
+                    <h1>Oreo Capuchino Đá Xay</h1>
+                    <p>Oreo Espresso Ice Blended</p>
+                    <p class="gia">65000 đ</p>
+                    <button onclick="them('Oreo Capuchino Đá Xay', '65000')">ĐẶT HÀNG</button>
+                </div>
+                <div id="product" class="sanpham">
+                    <img src="https://phuclong.com.vn/uploads/dish/8a92bb4b37c012-cafe5mon01.png" alt="">
+                    <h1>Latte</h1>
+                    <p>&nbsp;</p>
+                    <p class="gia">45000 đ</p>
+                    <button onclick="them('Latte', '45000')">ĐẶT HÀNG</button>
+                </div>
+                <div id="product" class="sanpham">
+                    <img src="https://phuclong.com.vn/uploads/dish/063555c21c4206-trviliphclong.png" alt="">
+                    <h1>Trà Vải Lài</h1>
+                    <p>Lychee Jasmine Tea </p>
+                    <p class="gia">50000 đ</p>
+                    <button onclick="them('Trà Vải Lài', '50000')">ĐẶT HÀNG</button>
+                </div>
+            </div>
+        </div>
+
+        <h1>Giỏ hàng</h1> <br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                    <th>Xóa</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Đây là nơi hiển thị các sản phẩm đã được thêm vào giỏ hàng -->
+            </tbody>
+        </table>
+        
+        <div id="tong-tien">
+            Tổng tiền: 0 đ
+        </div>
+<br>
+        <script>
+    var tinhTien = 0; // Biến lưu tổng tiền
+
+    // Hàm được gọi khi người dùng nhấn vào nút "ĐẶT HÀNG"
+    function them(tenSanPham, giaSanPham) {
+        // Tìm kiếm sản phẩm trong giỏ hàng
+        var giohang = document.getElementById("cart-items");
+        var daThem = Array.from(giohang.getElementsByClassName("sanpham")).find(function(item) {
+            return item.getAttribute("data-ten") === tenSanPham;
+        });
+
+        if (daThem) {
+            // Nếu sản phẩm đã tồn tại trong giỏ hàng, tăng số lượng
+            var soluongSpan = daThem.querySelector(".soluong");
+            var soluong = parseInt(soluongSpan.innerHTML);
+            soluong++;
+            soluongSpan.innerHTML = soluong;
+
+            // Cập nhật thành tiền
+            var tien = parseInt(giaSanPham.replace(',', ''));
+            var thanhtienSpan = daThem.querySelector(".tong-tien");
+            var tong = soluong * tien;
+            thanhtienSpan.innerHTML = tong;
+        } else {
+            // Nếu sản phẩm chưa tồn tại trong giỏ hàng, tạo mới và thêm vào giỏ hàng
+            var item = document.createElement("tr");
+            item.className = "sanpham";
+            item.setAttribute("data-ten", tenSanPham);
+
+            // Cột Sản phẩm
+            var cotSP = document.createElement("td");
+            cotSP.innerHTML = tenSanPham;
+            item.appendChild(cotSP);
+
+            // Cột Số lượng
+            var cotSL = document.createElement("td");
+            var soluongSpan = document.createElement("span");
+            soluongSpan.className = "soluong";
+            soluongSpan.innerHTML = "1"; // Mặc định số lượng là 1
+            cotSL.appendChild(soluongSpan);
+            item.appendChild(cotSL);
+
+            // Cột Thành tiền
+            var cotTongTien = document.createElement("td");
+            cotTongTien.className = "tong-tien";
+            cotTongTien.innerHTML = giaSanPham;
+            item.appendChild(cotTongTien);
+
+            // Cột Xóa 
+            var cotXoa = document.createElement("td");
+            var xoaBtn = document.createElement("button");
+            xoaBtn.innerHTML = "Xóa";
+            xoaBtn.onclick = function() {
+                xoa(item, giaSanPham);
+            };
+            cotXoa.appendChild(xoaBtn);
+            item.appendChild(cotXoa);
+
+            // Thêm sản phẩm vào giỏ hàng
+            giohang.appendChild(item);
+        }
+
+        // Cập nhật tổng tiền
+        tinhTien += parseInt(giaSanPham.replace(',', ''));
+        var layTien = document.getElementById("tong-tien");
+        layTien.innerHTML = "Tổng tiền: " + tinhTien;
+    }
+
+    // Hàm được gọi khi người dùng nhấn vào nút "Xóa"
+    function xoa(item, giaSanPham) {
+        var giohang = document.getElementById("cart-items");
+        giohang.removeChild(item);
+
+        // Cập nhật tổng tiền
+        var thanhtienSpan = item.querySelector(".tong-tien");
+        var tong = parseInt(thanhtienSpan.innerHTML.replace(',', ''));
+        tinhTien -= tong;
+        var layTien = document.getElementById("tong-tien");
+        layTien.innerHTML = "Tổng tiền: " + tinhTien;
+    }
+</script>
+
+        <footer>
+            <div class="thongtin">
+                <div class="diachi">
+                    <p>
+                        <span>Trụ sở chính: </span>
+                        Công ty Cổ Phần Phúc Long Heritage - ĐKKD: 0316 871719
+                        do sở KHĐT TPHCM cấp lần đầu ngày 21/05/2021
+                    </p>
+                    <p>
+                        <span>Nhà máy: </span>
+                        D_8D_CN Đường XE 1, Khu Công Nghiệp Mỹ Phước III, phường Mỹ Phước, thị xã Bến Cát, tỉnh Bình
+                        Dương, Việt Nam
+                    </p>
+                    <p>
+                        <span>Địa chỉ: </span>
+                        Phòng 702, Tầng 7, Tòa nhà Central Plaza, số 17 Lê Duẩn, phường Bến Nghé, quận 1, Hồ Chí Minh
+                    </p>
+                    <p>
+                        <span>Điện thoại: </span>
+                        1900 234 518 (Ext.9100/ 9102)
+                    </p>
+                    <p>
+                        <span>Fax: </span>
+                        (028) 6263 0379
+                    </p>
+                    <p>
+                        <span>Email: </span>
+                        sales@phuclong.masangroup.com
+                    </p>
+                </div>
+                <div class="lienhe">
+                    <span>Liên hệ: </span>
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 224 432">
+                            <path fill="currentColor"
+                                d="M145 429H66V235H0v-76h66v-56q0-48 27-74t72-26q36 0 59 3v67l-41 1q-22 0-30 9t-8 27v49h76l-10 76h-66v194z" />
+                        </svg>
+                    </div>
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 14 14">
+                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M10.333 3.644a.25.25 0 1 1 0-.5m0 .5a.25.25 0 1 0 0-.5" />
+                                <path
+                                    d="M.858 3.431A2.573 2.573 0 0 1 3.431.858h6.862a2.573 2.573 0 0 1 2.573 2.573v6.862a2.573 2.573 0 0 1-2.573 2.573H3.43a2.573 2.573 0 0 1-2.573-2.573V3.43Z" />
+                                <path d="M4.312 6.862a2.55 2.55 0 1 0 5.1 0a2.55 2.55 0 1 0-5.1 0" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                            <path fill="currentColor" fill-rule="evenodd"
+                                d="m7.172 11.334l2.83 1.935l2.728-1.882l6.115 6.033c-.161.052-.333.08-.512.08H1.667c-.22 0-.43-.043-.623-.12l6.128-6.046ZM20 6.376v9.457c0 .247-.054.481-.15.692l-5.994-5.914L20 6.376ZM0 6.429l6.042 4.132l-5.936 5.858A1.663 1.663 0 0 1 0 15.833V6.43ZM18.333 2.5c.92 0 1.667.746 1.667 1.667v.586L9.998 11.648L0 4.81v-.643C0 3.247.746 2.5 1.667 2.5h16.666Z" />
+                        </svg>
+                    </div>
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16">
+                            <path fill="currentColor"
+                                d="M16 3c-.6.3-1.2.4-1.9.5c.7-.4 1.2-1 1.4-1.8c-.6.4-1.3.6-2.1.8c-.6-.6-1.5-1-2.4-1c-1.7 0-3.2 1.5-3.2 3.3c0 .3 0 .5.1.7c-2.7-.1-5.2-1.4-6.8-3.4c-.3.5-.4 1-.4 1.7c0 1.1.6 2.1 1.5 2.7c-.5 0-1-.2-1.5-.4C.7 7.7 1.8 9 3.3 9.3c-.3.1-.6.1-.9.1c-.2 0-.4 0-.6-.1c.4 1.3 1.6 2.3 3.1 2.3c-1.1.9-2.5 1.4-4.1 1.4H0c1.5.9 3.2 1.5 5 1.5c6 0 9.3-5 9.3-9.3v-.4C15 4.3 15.6 3.7 16 3z" />
+                        </svg>
+                    </div>
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="currentColor" fill-rule="evenodd"
+                                d="M21.7 8c0-.7-.4-1.3-.8-2c-.5-.5-1.2-.8-2-.8C16.2 5 12 5 12 5s-4.2 0-7 .2c-.7 0-1.4.3-2 .9c-.3.6-.6 1.2-.7 2l-.2 3.1v1.5c0 1.1 0 2.2.2 3.3c0 .7.4 1.3.8 2c.6.5 1.4.8 2.2.8l6.7.2s4.2 0 7-.2c.7 0 1.4-.3 2-.9c.3-.5.6-1.2.7-2l.2-3.1v-1.6c0-1 0-2.1-.2-3.2M10 14.6V9l5.4 2.8z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="banquyen">
+                <span>© 2017 Bản quyền Phuc Long Co., Ltd </span>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

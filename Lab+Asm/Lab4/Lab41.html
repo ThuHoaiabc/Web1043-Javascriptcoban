@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+</head>
+<body>
+    <script>
+        // 1. Tạo một mảng (inventory array) lưu trữ một kho các mặt hàng (item) của cửa hàng.
+        var inventoryArray = [];
+        // 2. Tạo 3 items (gợi ý: sử dụng object), mỗi item có các thuộc tính như name, model, cost và quantity.
+        var item1 = {
+            name: 'Item 1',
+            model: 'Model 1',
+            cost: 100,
+            quantity: 5
+        };
+        var item2 = {
+            name: 'Item 2',
+            model: 'Model 2',
+            cost: 200,
+            quantity: 10
+        };
+        var item3 = {
+            name: 'Item 3',
+            model: 'Model 3',
+            cost: 300,
+            quantity: 15
+        };
+        
+        // 3. Thêm các item vào mảng và xuất inventory array bằng console
+        inventoryArray.push(item1, item2, item3);
+        console.log(inventoryArray);
+
+        // 4. Truy xuất quantity element của item thứ 3 bằng console.
+        console.log("Quantity của item 3: ", inventoryArray[2].quantity);
+
+        // 5. Thêm và truy xuất thêm các elements khác từ inventory array
+        inventoryArray[0].mota = "Đây là item 1.";
+        console.log("Mô tả về item 1: ", inventoryArray[0].mota);
+    </script>
+</body>
+</html>

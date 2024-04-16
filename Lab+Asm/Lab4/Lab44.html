@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4</title>
+</head>
+
+<body>
+    <h2>Time</h2>
+    <p id="currentTime"></p>
+    <script>
+        // Định nghĩa hàm để hiển thị thời gian hiện tại
+        function hienthiTime() {
+            var now = new Date();
+            var h = now.getHours();
+            var m = now.getMinutes();
+            var s = now.getSeconds();
+
+            // Hiển thị thời gian hiện tại trong thẻ có id "currentTime"
+            document.getElementById("currentTime").innerHTML = h + ":" + m + ":" + s;
+
+            // Gọi lại hàm displayCurrentTime sau 1 giây
+            setTimeout(hienthiTime, 1000);
+        }
+
+        // Gọi hàm hienthiTime() để bắt đầu hiển thị thời gian
+        hienthiTime();
+    </script>
+</body>
+
+</html>

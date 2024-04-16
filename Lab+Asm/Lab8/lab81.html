@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+</head>
+<body>
+    <input type="file" multiple onchange="uploadFile(this.files)">
+    <div id="message"></div>
+    <br>
+    <script>
+        // Upload 1 file
+        // let message = document.getElementById("message");
+        // function uploadFile(files) {
+        //     console.log(files[0]);
+        //     message.innerText = files[0].name;
+        // }
+
+        // Upload nhiều file
+        let message = document.getElementById("message");
+        function uploadFile(files) {
+        for (let i = 0; i < files.length; i++) {
+        message.innerHTML += files [i].name + "<br>";
+        }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+</head>
+<body>
+    <img id="anh" src="img/0.jpg" width="300px" height="500px" alt=""
+    onmouseover = "onMouseOverEvent()"
+    onmouseout = "onMouseOutEvent()"/>
+    <hr>
+    <button onclick="first()">First</button>
+    <button onclick="next()">Next</button>
+    <button onclick="prev()">Prev</button>
+    <button onclick="last()">Last</button>
+    <button onclick="auto()">Auto</button>
+    <button onclick="stop()">Stop</button>
+    <script>
+        function onMouseOverEvent(){
+            document.getElementById("anh").src = "img/3.jpg";
+        }
+        function onMouseOutEvent(){
+            document.getElementById("anh").src = "img/2.jpg";
+        }
+
+        var images = [];
+        var interval;
+        for (let i = 0; i < 8; i++) {
+            images[i] = new Image();
+            images[i].src = "img/" + i + ".jpg";
+        }
+
+        var index = 0;
+        function first() {
+            index = 0;
+            var anh = document.getElementById("anh");
+            anh.src = images[index].src;
+        }
+
+        function last() {
+            index = images.length - 1;
+            var anh = document.getElementById("anh");
+            anh.src = images[index].src;
+        }
+
+        function next() {
+            index++;
+            var anh = document.getElementById("anh");
+            anh.src = images[index].src;
+        }
+
+        function prev() {
+            index--;
+            var anh = document.getElementById("anh");
+            anh.src = images[index].src;
+        }
+
+        function auto() {
+            interval = setInterval(next, 1000);
+        }
+
+        function stop() {
+            clearInterval(interval);
+        }
+    </script>
+</body>
+</html>

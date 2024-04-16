@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4</title>
+    <style>
+        input {
+            width: 100px;
+            height: 100px;
+            margin: 150px;
+            background-color: pink;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="Rock" onclick="getValue(0);" />
+    <input type="button" value="Paper" onclick="getValue(1);" />
+    <input type="button" value="Scissors" onclick="getValue(2);" />
+    <script>
+        var arr = ['Rock', 'Paper', 'Scissors'];
+
+        function getValue(nguoiChoi) {
+        var s = Math.floor(Math.random() * 3);
+
+        var ketqua = 'Máy tính chọn: ' + arr[s] + '\n';
+        ketqua += 'Bạn chọn: ' + arr[nguoiChoi] + '\n\n';
+
+        if (nguoiChoi === s) {
+            ketqua += 'Hoà!';
+        } else if (
+            (nguoiChoi === 0 && s === 2) || (nguoiChoi === 1 && s === 0) || (nguoiChoi === 2 && s === 1) 
+        ) {
+            ketqua += 'Bạn thắng!';
+        } else {
+            ketqua += 'Bạn thua!';
+        }
+
+        alert(ketqua);
+        }
+    </script>
+</body>
+</html>

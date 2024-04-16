@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bài 5</title>
+    <script type="text/javascript">
+        function hien_thi(visible) {
+            var phi_vc = document.getElementById("phi_vc");
+            phi_vc.style.display = visible ? "" : "none";
+        }
+
+        function kiem_tra() {
+            var sp = document.getElementById("san_pham");
+            if (sp.value.length == 0) {
+                alert("Vui lòng nhập tên sản phẩm!");
+                return false;
+            }
+
+            var gia = document.getElementById("don_gia");
+            if (isNaN(gia.value) || gia.value.length == 0) {
+                alert("Vui lòng nhập số!");
+                return false;
+            } else if (parseFloat(gia.value) <= 0) {
+                alert("Vui lòng nhập số dương!");
+                return false;
+            }
+
+            var loai = document.getElementById("loai");
+            if (loai.value.length == 0) {
+                alert("Vui lòng chọn loại sản phẩm!");
+                return false;
+            }
+
+            var radios = document.getElementsByName("dia_chi");
+            if (!radios[0].checked && !radios[1].checked) {
+                alert("Vui lòng chọn nơi nhận hàng!");
+                return false;
+            }
+
+            alert("Chúc mừng bạn đã nhập đúng!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>ĐẶT HÀNG</h1>
+    <form onsubmit="return kiem_tra()">
+        <label for="san_pham">Sản phẩm:</label>
+        <input type="text" id="san_pham" name="san_pham"><br><br>
+
+        <label for="don_gia">Đơn giá:</label>
+        <input type="number" id="don_gia" name="don_gia"><br><br>
+
+        <label for="loai">Loại sản phẩm:</label>
+        <select id="loai" name="loai">
+            <option value="">-- Chọn loại --</option>
+            <option value="A">Loại A</option>
+            <option value="B">Loại B</option>
+            <option value="C">Loại C</option>
+        </select><br><br>
+
+        <label for="dia_chi">Nơi nhận hàng:</label>
+        <input type="radio" name="dia_chi" onclick="hien_thi(false)">Nội thành
+        <input type="radio" name="dia_chi" onclick="hien_thi(true)">Ngoại thành<br><br>
+        <hr>
+        <div id="phi_vc" style="display: none;">
+            <label for="phi">Phí vận chuyển:</label>
+            <input type="text" id="phi" name="phi" value="30000"><br><br>
+        </div>
+
+        <input type="submit" value="Đặt mua">
+    </form>
+</body>
+</html>

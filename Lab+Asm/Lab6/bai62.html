@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+    <script type="text/javascript" src="titac.js"></script>
+    <style>
+        .container {
+            /* background-color: red; */
+            width: 400px;
+            height: 500px;
+            margin: auto;
+        }
+        .row{
+            display: flex;
+            flex-grow: 1;
+            /* background-color: blue; */
+        }
+        .gameBoard {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .btn {
+            flex-grow: 1;
+            margin: 5px;
+            font-size: 5em;
+            font-weight: bold;
+            width: 90px;
+            height: 90px;
+        }
+        .title {
+            font-size: 1.8em;
+            text-align: center;
+            color: rgb(21, 171, 197);
+        }
+        .controls {
+            text-align: center;
+        }
+        .xbtn{
+            color: rgb(122, 122 , 17);
+        }
+        .obtn{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">TicTacToe</div>
+        <div class="gameBoard">
+            <div class="row">
+                <button class="btn" onclick="play(this)"></button>
+                <button class="btn" onclick="play(this)"></button>
+                <button class="btn" onclick="play(this)"></button>
+                
+            </div>
+            <div class="row">
+                <button class="btn " onclick="play(this)"></button>
+                <button class="btn " onclick="play(this)"></button>
+                <button class="btn " onclick="play(this)"></button>
+            </div>
+            <div class="row">
+                <button class="btn" onclick="play(this)"></button>
+                <button class="btn" onclick="play(this)"></button>
+                <button class="btn" onclick="play(this)"></button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

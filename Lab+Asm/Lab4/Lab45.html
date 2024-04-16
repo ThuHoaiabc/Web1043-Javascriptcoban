@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5</title>
+</head>
+
+<body>
+    <h2>Control Windows</h2>
+    <button onclick="openNewWindow()">Mở cửa sổ mới</button>
+    <button onclick="closeNewWindow()">Đóng cửa sổ mới</button>
+    <button onclick="checkNewWindowClosed()">Kiểm tra cửa sổ mới đã đóng hay chưa</button>
+    <script>
+        var newWindow; // Biến lưu trữ cửa sổ mới
+
+        function openNewWindow() {
+            if (navigator.userAgent.indexOf("IE") !== -1){
+                var width = 100;
+                var height = width;
+            }else {
+                var width = 150;
+                var height = width;
+            }
+            
+            // Mở cửa sổ mới trong trình duyệt
+            newWindow = window.open("", "", "toolbar=yes,menubar=yes,width=" + width + ",height=" + height);
+        }
+
+        function closeNewWindow() {
+            // Đóng cửa sổ mới nếu nó đã được mở
+            if (newWindow && !newWindow.closed) {
+                newWindow.close();
+            }
+        }
+
+        function checkNewWindowClosed() {
+            // Kiểm tra xem cửa sổ mới đã đóng hay chưa
+            var message = (newWindow && newWindow.closed) ? "Cửa sổ mới đã đóng." : "Cửa sổ mới chưa được đóng.";
+            alert(message);
+        }
+    </script>
+</body>
+
+</html>
